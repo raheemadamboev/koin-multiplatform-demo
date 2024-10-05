@@ -75,6 +75,15 @@ kotlin {
             implementation(compose.desktop.currentOs)
         }
     }
+
+    compilerOptions {
+        freeCompilerArgs.addAll(
+            listOf(
+                "-Xexpect-actual-classes",
+                "-opt-in=org.koin.core.annotation.KoinExperimentalAPI"
+            )
+        )
+    }
 }
 
 android {
